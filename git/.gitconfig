@@ -1,0 +1,10 @@
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = ~/.gitignore_global
+	pager = delta
+	editor = nvim
+	whitespace = cr-at-eol
+	autocrlf = input
+[pull]
+	rebase = true
