@@ -2,9 +2,15 @@
 	defaultBranch = main
 [core]
 	excludesfile = ~/.gitignore_global
-	pager = delta
+	pager = less
 	editor = nvim
 	whitespace = cr-at-eol
 	autocrlf = input
 [pull]
 	rebase = true
+[rebase]
+	autoStash = true
+[includeIf "gitdir:~/source/ado/"]
+	path = ~/source/ado/.gitconfig_include
+[includeIf "gitdir:~/source/github.com/"]
+	path = ~/source/github.com/.gitconfig_include

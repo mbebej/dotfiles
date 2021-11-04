@@ -25,14 +25,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # tmux
-tmuxSessions=`tmux ls | grep -v attached`
+tmuxSessions=`tmux ls | grep -v attached` > /dev/null 2>&1
 if [[ -z $TMUX ]]; then
 	if [ "$TERM" != "screen" ] && [[ -n $tmuxSessions ]]; then
 		tmux at
 	else
 		tmux
 	fi
-fi
+fi > /dev/null 2>&1
 
 # go
 export PATH=$PATH:/usr/local/go/bin
