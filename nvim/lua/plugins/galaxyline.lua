@@ -92,7 +92,6 @@ section.left[0] = {
 section.left[1] = {
 	FileName = {
 		provider = get_current_file_name,
-		condition = vim.fn.empty(vim.fn.expand('%:t')) == 1,
 		highlight = {colors.fg, colors.bg}
 	}
 }
@@ -114,7 +113,6 @@ section.short_line_left[0] = {
 section.short_line_left[1] = {
 	FileName = {
 		provider = get_current_file_name,
-		condition = vim.fn.empty(vim.fn.expand('%:t')) == 1,
 		highlight = {colors.fg, colors.bg}
 	}
 }
@@ -133,7 +131,7 @@ section.right[0] = {
 			if (modified == nil) then
 				return 'b:' .. branch
 			end
-			return 'b:' .. branch .. '*'
+			return 'b:' .. branch .. '~'
 		end
 	}
 }
