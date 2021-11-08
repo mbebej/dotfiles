@@ -3,6 +3,7 @@ local section = gl.section
 local colors = require('colors')
 local condition = require("galaxyline.condition")
 local vcs = require("galaxyline.provider_vcs")
+local fileinfo = require('galaxyline.provider_fileinfo')
 
 local mode_text = {
 	n = 'normal',
@@ -26,7 +27,7 @@ local mode_text = {
 	no = 'operator-pending',
 	nov = 'operator-pending',
 	noV = 'operator-pending',
-	--noCTRL-V = 'operator-pending',
+	noCTRLV = 'operator-pending',
 	['^V'] = 'visual(block)',
 	['^S'] = 'select(block)',
 	r = 'hit enter',
@@ -65,7 +66,6 @@ local function file_readonly()
 	return ''
 end
 
-
 local function get_current_file_name()
 	local file = vim.fn.expand('%:t')
 	if vim.fn.empty(file) == 1 then return '' end
@@ -76,7 +76,7 @@ local function get_current_file_name()
 	return file .. ' '
 end
 
-
+-- left
 section.left[0] = {
 	ModeNum = {
 		highlight = {colors.black, colors.bg},
@@ -92,33 +92,51 @@ section.left[0] = {
 section.left[1] = {
 	FileName = {
 		provider = get_current_file_name,
-		highlight = {colors.fg, colors.bg}
+		separator = ' '
 	}
 }
 
-
--- Short line left hand side modules
-section.short_line_left[0] = {
-	ModeNum = {
-		highlight = {colors.black, colors.bg, "bold"},
+section.left[2] = {
+	LineColumn = {
 		provider = function()
-			vim.api.nvim_command("hi GalaxyModeNum guibg=" .. mode_color[vim.fn.mode()])
-			return mode_text[vim.fn.mode()] .. ' '
+			local line = vim.fn.line('.')
+			local column = vim.fn.col('.')
+			return string.format("%d:%d", line, column)
 		end,
-		separator = ' ',
-		separator_highlight = {colors.bg, colors.bg}
-	}
-}
-
-section.short_line_left[1] = {
-	FileName = {
-		provider = get_current_file_name,
-		highlight = {colors.fg, colors.bg}
+		separator = ' '
 	}
 }
 
 -- right
 section.right[0] = {
+	FileEncode = {
+		provider = function()
+			return vim.bo.fileencoding
+		end,
+		separator = ' '
+	}
+}
+
+section.right[1] = {
+	FileFormat = {
+		provider = function()
+			return vim.bo.fileformat
+		end,
+		separator = ' '
+	}
+}
+
+section.right[2] = {
+	FileSize = {
+		--provider = function()
+		--	return vim.fn.getfsize(vim.fn.expand('%:p'))
+		--end,
+		provider = fileinfo.get_file_size,
+		separator = ' '
+	}
+}
+
+section.right[3] = {
 	Git = {
 		condition = condition.check_git_workspace,
 		highlight = {colors.fg, colors.bg},
