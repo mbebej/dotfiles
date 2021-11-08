@@ -66,7 +66,7 @@ local function file_readonly()
 	return ''
 end
 
-local function get_current_file_name()
+local function get_file_name()
 	local file = vim.fn.expand('%:t')
 	if vim.fn.empty(file) == 1 then return '' end
 	if string.len(file_readonly()) ~= 0 then return file .. file_readonly() end
@@ -84,7 +84,7 @@ section.left[0] = {
 			vim.api.nvim_command("hi GalaxyModeNum guibg=" .. mode_color[vim.fn.mode()])
 			return mode_text[vim.fn.mode()] .. ' ' 
 		end,
-		separator = ' | ',
+		separator = ' ',
 		separator_highlight = {colors.fg, colors.bg}
 	}
 }
@@ -92,8 +92,9 @@ section.left[0] = {
 section.left[1] = {
 	FileName = {
 		highlight = {colors.fg, colors.bg},
-		provider = get_current_file_name,
-		separator = ' | '
+		provider = get_file_name,
+		separator = ' | ',
+		separator_highlight = {colors.black, colors.bg}
 	}
 }
 
@@ -106,7 +107,7 @@ section.left[2] = {
 			return string.format("%d:%d", line, column)
 		end,
 		separator = ' | ',
-		separator_highlight = {colors.fg, colors.bg}
+		separator_highlight = {colors.black, colors.bg}
 	}
 }
 
@@ -118,7 +119,7 @@ section.right[0] = {
 			return vim.bo.fileencoding
 		end,
 		separator = ' | ',
-		separator_highlight = {colors.fg, colors.bg}
+		separator_highlight = {colors.black, colors.bg}
 	}
 }
 
@@ -129,7 +130,7 @@ section.right[1] = {
 			return vim.bo.fileformat
 		end,
 		separator = ' | ',
-		separator_highlight = {colors.fg, colors.bg}
+		separator_highlight = {colors.black, colors.bg}
 	}
 }
 
@@ -141,7 +142,7 @@ section.right[2] = {
 		--end,
 		provider = fileinfo.get_file_size,
 		separator = ' | ',
-		separator_highlight = {colors.fg, colors.bg}
+		separator_highlight = {colors.black, colors.bg}
 	}
 }
 
@@ -161,6 +162,6 @@ section.right[3] = {
 			return 'b:' .. branch .. '~'
 		end,
 		separator = ' | ',
-		separator_highlight = {colors.fg, colors.bg}
+		separator_highlight = {colors.black, colors.bg}
 	}
 }

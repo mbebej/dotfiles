@@ -1,9 +1,15 @@
 # dotfiles  
+This repository is for my own personal set up. This is only intended to work for me and be an easy way to share between systems. I currently use Fedora and macOS. So this is indended to be configurations I can share between both of those systems.   
+
 ```  
-ln -s ~/source/github.com/dotfiles/tmux/.tmux.conf  
-ln -s ~/source/github.com/dotfiles/zsh/.zshrc  
-ln -s ~/source/github.com/dotfiles/git/.gitconfig  
-ln -s ~/source/github.com/dotfiles/git/.gitignore_global  
+sudo dnf install git git-delta kitty neovim tmux fira-code-fonts   
+
+ln -s ~/source/github.com/dotfiles/bash/.bashrc  ~/  
+ln -s ~/source/github.com/dotfiles/zsh/.zshrc  ~/  
+ln -s ~/source/github.com/dotfiles/tmux/.tmux.conf ~/  
+ln -s ~/source/github.com/dotfiles/git/.gitconfig ~/  
+ln -s ~/source/github.com/dotfiles/git/.gitignore_global ~/  
+ln -s ~/source/github.com/dotfiles/kitty/kitty.conf ~/.config/kitty/  
 ```  
   
 ## .gitconfig_include files  
@@ -13,7 +19,7 @@ ln -s ~/source/github.com/dotfiles/git/.gitignore_global
     name = My Name  
 ```  
   
-## set up nvim  
+## set up neovim  
 ```  
 pip install pynvim  
 ```  

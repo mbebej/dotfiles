@@ -18,6 +18,7 @@ export PATH
 # User specific aliases and functions
 alias ll='ls -alF'
 alias la='ls -A'
+alias grub-reboot='grub2-reboot'
 
  # nvm
 export NVM_DIR="$HOME/.nvm"

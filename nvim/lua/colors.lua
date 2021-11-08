@@ -21,5 +21,5 @@ return {
 	violet = "#a9a1e1",
 	white = "#eff0f1",
 	yellow = "#f09f17",
-	black = "#202328"
+	black = "#000000"
 }

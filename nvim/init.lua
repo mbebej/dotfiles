@@ -106,8 +106,8 @@ nnoremap <silent> <C-k> :call WinMove('k')<CR>
 nnoremap <silent> <C-l> :call WinMove('l')<CR>
 ]])
 
-vim.api.nvim_set_keymap('n', '˚', ':move .-2<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n', '∆', ':move .+1<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<A-Up>', ':move .-2<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<A-Down>', ':move .+1<CR>', {noremap = true})
 
 -- --------------
 -- Go keybindings
