@@ -84,62 +84,71 @@ section.left[0] = {
 			vim.api.nvim_command("hi GalaxyModeNum guibg=" .. mode_color[vim.fn.mode()])
 			return mode_text[vim.fn.mode()] .. ' ' 
 		end,
-		separator = ' ',
-		separator_highlight = {colors.bg, colors.bg}
+		separator = ' | ',
+		separator_highlight = {colors.fg, colors.bg}
 	}
 }
 
 section.left[1] = {
 	FileName = {
+		highlight = {colors.fg, colors.bg},
 		provider = get_current_file_name,
-		separator = ' '
+		separator = ' | '
 	}
 }
 
 section.left[2] = {
 	LineColumn = {
+		highlight = {colors.fg, colors.bg},
 		provider = function()
 			local line = vim.fn.line('.')
 			local column = vim.fn.col('.')
 			return string.format("%d:%d", line, column)
 		end,
-		separator = ' '
+		separator = ' | ',
+		separator_highlight = {colors.fg, colors.bg}
 	}
 }
 
 -- right
 section.right[0] = {
 	FileEncode = {
+		highlight = {colors.fg, colors.bg},
 		provider = function()
 			return vim.bo.fileencoding
 		end,
-		separator = ' '
+		separator = ' | ',
+		separator_highlight = {colors.fg, colors.bg}
 	}
 }
 
 section.right[1] = {
 	FileFormat = {
+		highlight = {colors.fg, colors.bg},
 		provider = function()
 			return vim.bo.fileformat
 		end,
-		separator = ' '
+		separator = ' | ',
+		separator_highlight = {colors.fg, colors.bg}
 	}
 }
 
 section.right[2] = {
 	FileSize = {
+		highlight = {colors.fg, colors.bg},
 		--provider = function()
 		--	return vim.fn.getfsize(vim.fn.expand('%:p'))
 		--end,
 		provider = fileinfo.get_file_size,
-		separator = ' '
+		separator = ' | ',
+		separator_highlight = {colors.fg, colors.bg}
 	}
 }
 
 section.right[3] = {
 	Git = {
-		condition = condition.check_git_workspace,
 		highlight = {colors.fg, colors.bg},
+		condition = condition.check_git_workspace,
 		provider = function()
 			local branch = vcs.get_git_branch()
 			if (branch == nil) then
@@ -150,6 +159,8 @@ section.right[3] = {
 				return 'b:' .. branch
 			end
 			return 'b:' .. branch .. '~'
-		end
+		end,
+		separator = ' | ',
+		separator_highlight = {colors.fg, colors.bg}
 	}
 }
