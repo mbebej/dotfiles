@@ -1,5 +1,5 @@
 # dotfiles  
-This repository is for my own personal set up. This is only intended to work for me and be an easy way to share between systems. I currently use Fedora and macOS. So this is indended to be configurations I can share between both of those systems.   
+This repository is for my own personal set up. This is only intended to work for me and to be an easy way to share configurations between systems. I currently use Fedora and macOS, these configs are only tested on those systems.  
 
 ```  
 sudo dnf install git git-delta kitty neovim tmux fira-code-fonts   
