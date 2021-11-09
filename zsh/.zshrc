@@ -12,3 +12,6 @@ alias ll='ls -alF'
 
 export CLICOLOR=1
 
+# Added by Krypton
+export GPG_TTY=$(tty)
+
