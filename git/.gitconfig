@@ -15,4 +15,5 @@
 [includeIf "gitdir:~/source/github.com/"]
 	path = ~/source/github.com/.gitconfig_include
 [delta]
-	line-numbers = true
+    line-numbers = true
+
