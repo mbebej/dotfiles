@@ -39,6 +39,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 	Plug('airblade/vim-gitgutter')
 	Plug('glepnir/galaxyline.nvim' , {branch = 'main'})
     Plug('junegunn/fzf')
+	Plug('EdenEast/nightfox.nvim')
 	-- language specific plugins
 	Plug('fatih/vim-go', { ['do'] = ':GoUpdateBinaries' })
 	Plug('jelera/vim-javascript-syntax')
