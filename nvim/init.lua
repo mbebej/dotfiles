@@ -79,9 +79,11 @@ vim.g.go_highlight_generate_tags = 1
 vim.g.vimspector_install_gadgets = { 'vscode-go' }	-- install vscode-go debugging
 vim.g.vimspector_enable_mappings = 'VISUAL_STUDIO'	-- use visual studio like keybindings
 
---gitgutter
+-- gitgutter
 vim.g.gitgutter_set_sign_backgrounds = 1
 vim.g.gitgutter_highlight_linenrs = 1
+
+-- theme
 
 -- -------------------------
 -- Window Splitting/Movement
@@ -131,3 +133,4 @@ nmap('<F4>', '<Plug>VimspectorReset')
 vim.cmd [[ highlight link CocFloating markdown ]]
 
 require('plugins.galaxyline')
+require('plugins.nightfox')
