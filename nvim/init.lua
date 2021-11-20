@@ -45,6 +45,9 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 	Plug('jelera/vim-javascript-syntax')
 	Plug('leafOfTree/vim-svelte-plugin')
 	Plug('leafgarland/typescript-vim')
+	Plug('dense-analysis/ale')
+	Plug('rust-lang/rust.vim')
+	Plug('neovim/nvim-lspconfig')
 vim.call('plug#end')
 
 -- --------
@@ -75,6 +78,12 @@ vim.g.go_highlight_operators = 1
 vim.g.go_highlight_extra_types = 1
 vim.g.go_highlight_build_constraints = 1
 vim.g.go_highlight_generate_tags = 1
+
+-- rust settings
+vim.opt.completeopt = 'menu,menuone,preview,noselect,noinsert'
+vim.g.ale_completion_enabled = 1
+vim.g.ale_fixers = { rust = {'rustfmt', 'trim_whitespace', 'remove_trailing_lines'} }
+vim.g.LanguageClient_serverCommands = { rust = {'rust-analyzer'} }
 
 -- viminspector
 vim.g.vimspector_install_gadgets = { 'vscode-go' }	-- install vscode-go debugging
@@ -129,9 +138,15 @@ vim.cmd [[
 	nmap <C-d> <Plug>(coc-definition)
 ]]
 
+vim.cmd [[
+	nnoremap <C-LeftMouse> :ALEGoToDefinition<CR>
+]]
+
+
 nmap('<F4>', '<Plug>VimspectorReset')
 
 vim.cmd [[ highlight link CocFloating markdown ]]
 
+require'lspconfig'.rust_analyzer.setup({})
 require('plugins.galaxyline')
 require('plugins.nightfox')
