@@ -6,9 +6,10 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
-then
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+elif ! [[ "$PATH" =~ "/usr/local/go/bin" ]]; then # go
+	PATH="$PATH:/usr/local/go/bin"
 fi
 export PATH
 
@@ -35,5 +36,4 @@ if [[ -z $TMUX ]]; then
 	fi
 fi > /dev/null 2>&1
 
-# go
-export PATH=$PATH:/usr/local/go/bin
+. "$HOME/.cargo/env"
