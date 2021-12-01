@@ -82,6 +82,8 @@ vim.g.go_highlight_generate_tags = 1
 -- rust settings
 vim.opt.completeopt = 'menu,menuone,preview,noselect,noinsert'
 vim.g.ale_completion_enabled = 1
+vim.g.ale_completion_autoimport = 1
+vim.g.ale_fix_on_save = 1
 vim.g.ale_fixers = { rust = {'rustfmt', 'trim_whitespace', 'remove_trailing_lines'} }
 vim.g.LanguageClient_serverCommands = { rust = {'rust-analyzer'} }
 
