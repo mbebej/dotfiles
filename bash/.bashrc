@@ -26,14 +26,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# tmux
-tmuxSessions=`tmux ls | grep -v attached` > /dev/null 2>&1
-if [[ -z $TMUX ]]; then
-	if [ "$TERM" != "screen" ] && [[ -n $tmuxSessions ]]; then
-		tmux at
-	else
-		tmux
-	fi
-fi > /dev/null 2>&1
+# tmux auto start with bash
+#tmuxSessions=`tmux ls | grep -v attached` > /dev/null 2>&1
+#if [[ -z $TMUX ]]; then
+#	if [ "$TERM" != "screen" ] && [[ -n $tmuxSessions ]]; then
+#		tmux at
+#	else
+#		tmux
+#	fi
+#fi > /dev/null 2>&1
 
 . "$HOME/.cargo/env"
+
+export GPG_TTY=$(tty)

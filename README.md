@@ -15,8 +15,16 @@ ln -s ~/source/github.com/dotfiles/kitty/kitty.conf ~/.config/kitty/
 ## .gitconfig_include files  
 ```  
 [user]  
-    email = email@address.com  
-    name = My Name  
+    email = [email@address.com]
+    name = [My Name]
+[gpg]
+    program = gpg2
+[user]
+    signingkey = [signingkey]
+[commit]
+    gpgSign = true
+[tag]
+    forceSignAnnotated = true
 ```  
   
 ## set up neovim  
