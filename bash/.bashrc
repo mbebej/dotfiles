@@ -6,11 +6,14 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-elif ! [[ "$PATH" =~ "/usr/local/go/bin" ]]; then # go
-	PATH="$PATH:/usr/local/go/bin"
+if ! [[ "$PATH" =~ "$HOME/.local/bin" ]]; then
+    PATH="$HOME/.local/bin:$PATH"
 fi
+if ! [[ "$PATH" =~ "/usr/local/go/bin" ]]; then # go
+	PATH="/usr/local/go/bin:$PATH"
+fi
+if ! [[ $PATH =~ "$HOME/go/bin" ]] then # go path/tools
+    PATH="$HOME/go/bin:$PATH"
 export PATH
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
