@@ -9,11 +9,15 @@ fi
 if ! [[ "$PATH" =~ "$HOME/.local/bin" ]]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+if ! [[ "$PATH" =~ "$HOME/bin" ]]; then
+    PATH="$HOME/bin:$PATH"
+fi
 if ! [[ "$PATH" =~ "/usr/local/go/bin" ]]; then # go
 	PATH="/usr/local/go/bin:$PATH"
 fi
-if ! [[ $PATH =~ "$HOME/go/bin" ]] then # go path/tools
+if ! [[ $PATH =~ "$HOME/go/bin" ]]; then # go path/tools
     PATH="$HOME/go/bin:$PATH"
+fi
 export PATH
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
@@ -39,6 +43,6 @@ export NVM_DIR="$HOME/.nvm"
 #	fi
 #fi > /dev/null 2>&1
 
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
 
 export GPG_TTY=$(tty)
