@@ -7,8 +7,16 @@
 #	fi
 #fi > /dev/null 2>&1
 
-if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]; then
+NPM_CONFIG_PREFIX=$HOME/.npm-global
+
+if ! [[ "$PATH" =~ "$HOME/.local/bin" ]]; then
     PATH="$HOME/.local/bin:$PATH"
+fi
+if ! [[ "$PATH" =~ "$NPM_CONFIG_PREFIX/bin" ]]; then # npm
+    PATH="$PATH:$NPM_CONFIG_PREFIX/.npm-global/bin"
+fi
+if ! [[ "$PATH" =~ "$HOME/.dotnet/tools" ]]; then # dotnet tools
+    PATH="$PATH:$HOME/.dotnet/tools"
 fi
 if ! [[ "$PATH" =~ "/usr/local/go/bin" ]]; then # go
 	PATH="/usr/local/go/bin:$PATH"

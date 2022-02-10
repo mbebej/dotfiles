@@ -1,0 +1,18 @@
+{
+    "FormattingOptions": {
+        "EnableEditorConfigSupport": true,
+        "OrganizeImports": false,
+        "newLine": "\n",
+        "useTabs": false,
+        "tabSize": 4,
+        "indentationSize": 4
+    },
+    "RenameOptions": {
+        "RenameInComments": true,
+        "RenameOverloads": true,
+        "RenameInStrings": true
+    },
+    "RoslynExtensionsOptions": {
+        "enableAnalyzersSupport": true
+    }
+}
