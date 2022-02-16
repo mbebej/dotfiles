@@ -10,8 +10,8 @@ ln -s ~/source/github.com/dotfiles/tmux/.tmux.conf ~/
 ln -s ~/source/github.com/dotfiles/git/.gitconfig ~/
 ln -s ~/source/github.com/dotfiles/git/.gitignore_global ~/
 ln -s ~/source/github.com/dotfiles/kitty/kitty.conf ~/.config/kitty/
-ln -s ~/source/github.com/dotfiles/editorconfig ~/source/
-ln -s ~/source/github.com/dotfiles/omnisharp ~/.omnisharp/
+ln -s ~/source/github.com/dotfiles/editorconfig/.editorconfig ~/source/
+ln -s ~/source/github.com/dotfiles/omnisharp/omnisharp.json ~/.omnisharp/
 ```
   
 ## .gitconfig_include files  
