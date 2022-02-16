@@ -17,21 +17,8 @@
 		"html",
 		"css",
 		"json",
-		"go"
+		"csharp"
 	],
-	"languageserver": {
-		"go": {
-			"command": "gopls",
-			"rootPatterns": [
-				"go.mod"
-			],
-			"trace.server": "verbose",
-			"filetypes": [
-				"go"
-			]
-		}
-	},
-	"go.goplsOptions": {
-		"staticcheck": true
-	}
+	"languageserver": {},
+	"svelte.enable-ts-plugin": true
 }

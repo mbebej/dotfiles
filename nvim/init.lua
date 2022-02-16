@@ -41,7 +41,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
     Plug('junegunn/fzf')
 	Plug('EdenEast/nightfox.nvim')
 	-- language specific plugins
-	Plug('fatih/vim-go', { ['do'] = ':GoUpdateBinaries' })
+	Plug('OmniSharp/omnisharp-vim')
 	Plug('jelera/vim-javascript-syntax')
 	Plug('leafOfTree/vim-svelte-plugin')
 	Plug('leafgarland/typescript-vim')
@@ -66,18 +66,8 @@ vim.opt.tabstop = 4 					-- the width of tabs
 vim.opt.shiftwidth = 4 					-- number of spaces to use for indent and unindent
 vim.opt.shiftround = true 				-- round indent to a multiple of 'shiftwidth'
 
--- go settings
-vim.g.go_diagnostics_enabled = 0 		-- disable diagnostics this will be taken care of by coc
-vim.g.go_fmt_command = "goimports"		-- run goimports on file save
--- go additional syntax highlighting
-vim.g.go_highlight_types = 1
-vim.g.go_highlight_fields = 1
-vim.g.go_highlight_functions = 1
-vim.g.go_highlight_function_calls = 1
-vim.g.go_highlight_operators = 1
-vim.g.go_highlight_extra_types = 1
-vim.g.go_highlight_build_constraints = 1
-vim.g.go_highlight_generate_tags = 1
+-- dotnet settings
+vim.g.OmniSharp_server_use_net6 = 1
 
 -- rust settings
 vim.opt.completeopt = 'menu,menuone,preview,noselect,noinsert'
@@ -85,10 +75,11 @@ vim.g.ale_completion_enabled = 1
 vim.g.ale_completion_autoimport = 1
 vim.g.ale_fix_on_save = 1
 vim.g.ale_fixers = { rust = {'rustfmt', 'trim_whitespace', 'remove_trailing_lines'} }
-vim.g.LanguageClient_serverCommands = { rust = {'rust-analyzer'} }
+vim.g.LanguageClient_serverCommands = { rust = {'rust-analyzer'}, dotnet = {'omnisharp-roslyn'} }
+
+vim.g.coc_global_extensions = { 'coc-omnisharp', 'coc-tsserver', 'coc-svelte' }
 
 -- viminspector
-vim.g.vimspector_install_gadgets = { 'vscode-go' }	-- install vscode-go debugging
 vim.g.vimspector_enable_mappings = 'VISUAL_STUDIO'	-- use visual studio like keybindings
 
 -- gitgutter
@@ -122,23 +113,6 @@ nnoremap <silent> <C-l> :call WinMove('l')<CR>
 
 vim.api.nvim_set_keymap('n', '<A-Up>', ':move .-2<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<A-Down>', ':move .+1<CR>', {noremap = true})
-
--- --------------
--- Go keybindings
--- --------------
-vim.cmd [[
-	autocmd BufEnter *.go nmap <leader>b  <Plug>(go-build)
-	autocmd BufEnter *.go nmap <leader>r  <Plug>(go-run)
-	autocmd BufEnter *.go nmap <leader>t  <Plug>(go-test)
-	autocmd BufEnter *.go nmap <leader>tt <Plug>(go-test-func)
-	autocmd BufEnter *.go nmap <leader>i  <Plug>(go-info)
-	autocmd BufEnter *.go nmap <leader>ii  <Plug>(go-implements)
-	autocmd BufEnter *.go nmap <leader>ci  <Plug>(go-describe)
-	autocmd BufEnter *.go nmap <leader>cc  <Plug>(go-callers)
-	nmap <leader>cr <Plug>(coc-references)
-	nmap <C-a> <C-o>
-	nmap <C-d> <Plug>(coc-definition)
-]]
 
 vim.cmd [[
 	nnoremap <C-LeftMouse> :ALEGoToDefinition<CR>
