@@ -30,7 +30,7 @@ ln -s ~/source/github.com/dotfiles/omnisharp/omnisharp.json ~/.omnisharp/
 ```
   
 ## set up neovim  
-``Install `pynvim` with `pip install pynvim`
+Install `pynvim` with `pip install pynvim`  
 - copy nvim files into ~/.config/nvim.  
 ```
 :VimspectorInstall netcoredbg
