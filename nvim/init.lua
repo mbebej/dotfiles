@@ -38,8 +38,8 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 	Plug('editorconfig/editorconfig-vim')
 	Plug('airblade/vim-gitgutter')
 	Plug('glepnir/galaxyline.nvim' , {branch = 'main'})
-    Plug('junegunn/fzf')
-	Plug('EdenEast/nightfox.nvim')
+	Plug('junegunn/fzf')
+	Plug('EdenEast/nightfox.nvim', {tag = 'v1.0.0'})
 	-- language specific plugins
 	Plug('OmniSharp/omnisharp-vim')
 	Plug('jelera/vim-javascript-syntax')
@@ -104,22 +104,17 @@ function! WinMove(key)
         exec 'wincmd '.a:key
     endif
 endfunction
-
-nnoremap <silent> <C-h> :call WinMove('h')<CR>
-nnoremap <silent> <C-j> :call WinMove('j')<CR>
-nnoremap <silent> <C-k> :call WinMove('k')<CR>
-nnoremap <silent> <C-l> :call WinMove('l')<CR>
 ]])
 
-vim.api.nvim_set_keymap('n', '<A-Up>', ':move .-2<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<A-Down>', ':move .+1<CR>', {noremap = true})
-
-vim.cmd [[
-	nnoremap <C-LeftMouse> :ALEGoToDefinition<CR>
-]]
-
-
-nmap('<F4>', '<Plug>VimspectorReset')
+nmap('<C-h>', ':call WinMove(\'h\')<CR>', {noremap = true, silent = true})
+nmap('<C-j>', ':call WinMove(\'j\')<CR>', {noremap = true, silent = true})
+nmap('<C-k>', ':call WinMove(\'k\')<CR>', {noremap = true, silent = true})
+nmap('<C-l>', ':call WinMove(\'l\')<CR>', {noremap = true, silent = true})
+nmap('<A-Up>', ':move .-2<CR>', {noremap = true, silent = true})
+nmap('<A-Down>', ':move .+1<CR>', {noremap = true, silent = true})
+nmap('<F4>', ':VimspectorReset<CR>', {noremap = true, silent = true})
+nmap('<C-i>', ':OmniSharpFindImplementations<CR>', {noremap = false, silent = true})
+nmap('<D-d>', ':ALEGoToDefinition<CR>', {noremap = true})
 
 vim.cmd [[ highlight link CocFloating markdown ]]
 
