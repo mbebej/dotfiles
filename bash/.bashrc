@@ -12,6 +12,9 @@ fi
 if ! [[ "$PATH" =~ "$HOME/bin" ]]; then
     PATH="$HOME/bin:$PATH"
 fi
+if ! [[ "$PATH" =~ "$HOME/.dotnet/tools" ]]; then # dotnet tools
+    PATH="$PATH:$HOME/.dotnet/tools"
+fi
 if ! [[ "$PATH" =~ "/usr/local/go/bin" ]]; then # go
 	PATH="/usr/local/go/bin:$PATH"
 fi
@@ -26,7 +29,10 @@ export PATH
 # User specific aliases and functions
 alias ll='ls -alF'
 alias la='ls -A'
-alias grub-reboot='grub2-reboot'
+alias grubreboot='grub2-reboot'
+weather() {
+	curl -4 https://wttr.in/$1
+}
 
  # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -46,3 +52,5 @@ export NVM_DIR="$HOME/.nvm"
 #. "$HOME/.cargo/env"
 
 export GPG_TTY=$(tty)
+
+eval "$(direnv hook bash)"

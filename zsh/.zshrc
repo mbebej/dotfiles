@@ -19,7 +19,7 @@ if ! [[ "$PATH" =~ "$HOME/.dotnet/tools" ]]; then # dotnet tools
     PATH="$PATH:$HOME/.dotnet/tools"
 fi
 if ! [[ "$PATH" =~ "/usr/local/go/bin" ]]; then # go
-	PATH="/usr/local/go/bin:$PATH"
+    PATH="/usr/local/go/bin:$PATH"
 fi
 if ! [[ "$PATH" =~ "$HOME/go/bin" ]]; then # go path / tools
     PATH="$HOME/go/bin:$PATH"
@@ -27,8 +27,11 @@ fi
 
 alias pip="pip3"
 alias ll='ls -alF'
+weather() {
+	curl -4 https://wttr.in/$1
+}
 
 export CLICOLOR=1
 
 export GPG_TTY=$(tty)
-
+eval "$(direnv hook zsh)"
