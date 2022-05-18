@@ -3,7 +3,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	pager = delta
-	editor = nvim
+	editor = code --wait
 	whitespace = cr-at-eol
 	autocrlf = input
 [pull]
@@ -16,3 +16,7 @@
 	path = ~/source/github.com/.gitconfig_include
 [delta]
     line-numbers = true
+[diff]
+    tool = smerge
+[merge]
+    tool = smerge
