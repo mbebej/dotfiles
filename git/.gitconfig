@@ -1,19 +1,19 @@
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [core]
-	excludesfile = ~/.gitignore_global
-	pager = delta
-	editor = code --wait
-	whitespace = cr-at-eol
-	autocrlf = input
+    excludesfile = ~/.gitignore_global
+    pager = delta
+    editor = code --wait
+    whitespace = cr-at-eol
+    autocrlf = input
 [pull]
-	rebase = true
+    rebase = true
 [rebase]
-	autoStash = true
+    autoStash = true
 [includeIf "gitdir:~/source/ado/"]
-	path = ~/source/ado/.gitconfig_include
+    path = ~/source/ado/.gitconfig_include
 [includeIf "gitdir:~/source/github.com/"]
-	path = ~/source/github.com/.gitconfig_include
+    path = ~/source/github.com/.gitconfig_include
 [delta]
     line-numbers = true
 [diff]

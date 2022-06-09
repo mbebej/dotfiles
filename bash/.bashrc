@@ -52,5 +52,5 @@ export NVM_DIR="$HOME/.nvm"
 #. "$HOME/.cargo/env"
 
 export GPG_TTY=$(tty)
-
+export DOTNET_WATCH_RESTART_ON_RUDE_EDIT=1
 eval "$(direnv hook bash)"

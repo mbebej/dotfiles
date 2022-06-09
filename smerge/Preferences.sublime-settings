@@ -1,0 +1,10 @@
+{
+	"editor_argument_format": "--goto ${file}:${line}:${col}",
+	"editor_path": "code",
+	"editor_wait_args": "--wait",
+	"image_diff_style": "side-by-side",
+	"render_commit_dialog_message_at_top": true,
+	"side_bar_layout": "tabs",
+	"theme": "auto",
+	"hardware_acceleration": "opengl",
+}

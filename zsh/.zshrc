@@ -32,6 +32,6 @@ weather() {
 }
 
 export CLICOLOR=1
-
+export DOTNET_WATCH_RESTART_ON_RUDE_EDIT=1
 export GPG_TTY=$(tty)
 eval "$(direnv hook zsh)"
