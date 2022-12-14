@@ -96,14 +96,24 @@ csharp_space_between_method_declaration_parameter_list_parentheses = false
 csharp_space_between_parentheses = false
 csharp_space_between_square_brackets = false
 
-# Suggest more modern language features when available
+# Use Conditional Expression.
+dotnet_style_prefer_conditional_expression_over_assignment = true:suggestion
+dotnet_style_prefer_conditional_expression_over_return = true:suggestion
+
+# Use pattern matching.
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggestion
 csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
 csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
+
+# Suggest more modern language features when available
 csharp_style_inlined_variable_declaration = true:suggestion
 csharp_style_throw_expression = true:suggestion
 csharp_style_conditional_delegate_call = true:suggestion
 csharp_style_expression_bodied_methods = when_on_single_line
 csharp_style_expression_bodied_operators = when_on_single_line
+csharp_style_prefer_index_operator = true:suggestion
+csharp_style_prefer_range_operator = true:suggestion
+csharp_style_prefer_switch_expression = true:suggestion
 
 # Blocks are allowed
 csharp_prefer_braces = true:suggestion
@@ -116,7 +126,7 @@ csharp_style_var_when_type_is_apparent = true:suggestion
 csharp_style_var_elsewhere = true:suggestion
 
 # Imports preferences
-dotnet_sort_system_directives_first = false
+dotnet_sort_system_directives_first = true
 dotnet_separate_import_directive_groups = false
 
 # Naming rules

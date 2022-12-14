@@ -7,4 +7,5 @@
 	"side_bar_layout": "tabs",
 	"theme": "auto",
 	"hardware_acceleration": "opengl",
+	"expand_merge_commits_by_default": true,
 }
