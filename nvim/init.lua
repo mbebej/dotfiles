@@ -39,7 +39,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 	Plug('airblade/vim-gitgutter')
 	Plug('glepnir/galaxyline.nvim' , {branch = 'main'})
 	Plug('junegunn/fzf')
-	Plug('EdenEast/nightfox.nvim', {tag = 'v1.0.0'})
+	Plug('EdenEast/nightfox.nvim')
 	-- language specific plugins
 	Plug('OmniSharp/omnisharp-vim')
 	Plug('jelera/vim-javascript-syntax')
@@ -120,4 +120,4 @@ vim.cmd [[ highlight link CocFloating markdown ]]
 
 require'lspconfig'.rust_analyzer.setup({})
 require('plugins.galaxyline')
-require('plugins.nightfox')
+require('plugins.nightfox2')
