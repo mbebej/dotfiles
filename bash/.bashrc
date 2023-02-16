@@ -7,19 +7,19 @@ fi
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin" ]]; then
-    PATH="$HOME/.local/bin:$PATH"
+    PATH="$PATH:$HOME/.local/bin"
 fi
 if ! [[ "$PATH" =~ "$HOME/bin" ]]; then
-    PATH="$HOME/bin:$PATH"
+    PATH="$PATH:$HOME/bin"
 fi
 if ! [[ "$PATH" =~ "$HOME/.dotnet/tools" ]]; then # dotnet tools
     PATH="$PATH:$HOME/.dotnet/tools"
 fi
 if ! [[ "$PATH" =~ "/usr/local/go/bin" ]]; then # go
-	PATH="/usr/local/go/bin:$PATH"
+	PATH="$PATH:/usr/local/go/bin"
 fi
 if ! [[ $PATH =~ "$HOME/go/bin" ]]; then # go path/tools
-    PATH="$HOME/go/bin:$PATH"
+    PATH="$PATH:$HOME/go/bin"
 fi
 export PATH
 

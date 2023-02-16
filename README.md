@@ -17,14 +17,14 @@ ln -s ~/source/github.com/dotfiles/omnisharp/omnisharp.json ~/.omnisharp/
 ### macOS  
 ```bash
 # link settings file to Library folder.
-ln -s ~/source/github.com/dotfiles/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Merge/Packages/User/
+ln -s ~/source/github.com/dotfiles/smerge/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Merge/Packages/User/
 # link executable to folder in PATH
 ln -s "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" ~/.local/bin/
 ```
 ### fedora  
 ```bash
 # link settings file to .config folder.
-ln -s ~/source/github.com/dotfiles/Preferences.sublime-settings ~/.config/sublime-merge/Packages/User/
+ln -s ~/source/github.com/dotfiles/smerge/Preferences.sublime-settings ~/.config/sublime-merge/Packages/User/
 ```
   
 ## .gitconfig_include files  
