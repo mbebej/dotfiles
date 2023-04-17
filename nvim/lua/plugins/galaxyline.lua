@@ -79,10 +79,10 @@ end
 -- left
 section.left[0] = {
 	ModeNum = {
-		highlight = {colors.black, colors.bg},
+		highlight = {colors.black},
 		provider = function()
 			vim.api.nvim_command("hi GalaxyModeNum guibg=" .. mode_color[vim.fn.mode()])
-			return mode_text[vim.fn.mode()] .. ' ' 
+			return '  ' .. mode_text[vim.fn.mode()] .. ' ' 
 		end,
 		separator = ' ',
 		separator_highlight = {colors.fg, colors.bg}
