@@ -1,3 +1,13 @@
+export HISTFILE=~/.zsh_history
+export HISTSIZE=100000
+export SAVEHIST=1000000
+
+# The meaning of these options can be found in man page of `zshoptions`.
+setopt HIST_IGNORE_ALL_DUPS  # do not put duplicated command into history list
+setopt HIST_SAVE_NO_DUPS  # do not save duplicated command
+setopt HIST_REDUCE_BLANKS  # remove unnecessary blanks
+setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately after execution
+
 #tmuxSessions=`tmux ls | grep -v attached` > /dev/null 2>&1
 #if [[ -z $TMUX ]]; then
 #	if [ "$TERM" != "screen" ] && [[ -n $tmuxSessions ]]; then
@@ -35,3 +45,14 @@ export CLICOLOR=1
 export DOTNET_WATCH_RESTART_ON_RUDE_EDIT=1
 export GPG_TTY=$(tty)
 eval "$(direnv hook zsh)"
+
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats ' (%F{red}%b%f)'
+
+# Set up the prompt (with git branch name)
+setopt PROMPT_SUBST
+PROMPT='[%n@%m %1~${vcs_info_msg_0_}]%# '
