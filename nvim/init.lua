@@ -77,7 +77,7 @@ vim.g.ale_fix_on_save = 1
 vim.g.ale_fixers = { rust = {'rustfmt', 'trim_whitespace', 'remove_trailing_lines'} }
 vim.g.LanguageClient_serverCommands = { rust = {'rust-analyzer'}, dotnet = {'omnisharp-roslyn'} }
 
-vim.g.coc_global_extensions = { 'coc-omnisharp', 'coc-tsserver', 'coc-svelte' }
+vim.g.coc_global_extensions = { 'coc-rust-analyzer', 'coc-omnisharp', 'coc-tsserver' }
 
 -- viminspector
 vim.g.vimspector_enable_mappings = 'VISUAL_STUDIO'	-- use visual studio like keybindings

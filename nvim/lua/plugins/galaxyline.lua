@@ -157,9 +157,9 @@ section.right[3] = {
 			end
 			local modified = vcs.diff_modified()
 			if (modified == nil) then
-				return 'b:' .. branch
+				return 'b:' .. branch .. ' '
 			end
-			return 'b:' .. branch .. '~'
+			return 'b:' .. branch .. '~' .. ' '
 		end,
 		separator = ' | ',
 		separator_highlight = {colors.black, colors.bg}
