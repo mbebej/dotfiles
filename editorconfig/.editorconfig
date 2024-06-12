@@ -49,11 +49,19 @@ trim_trailing_whitespace = false
 indent_style = space
 indent_size = 4
 
+# YAML Files
+[*.{yml,yaml}]
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/csharp-formatting-options
 # CSharp code style settings:
 [*.cs]
 
 # General c# settings
 csharp_using_directive_placement = outside_namespace:suggestion
+csharp_style_namespace_declarations = file_scoped
 
 # Newline settings
 csharp_new_line_before_open_brace = all
@@ -66,35 +74,35 @@ csharp_new_line_between_query_expression_clauses = true
 csharp_place_attribute_on_same_line = false
 
 # Indentation preferences
-csharp_indent_block_contents = true
-csharp_indent_braces = false
 csharp_indent_case_contents = true
-csharp_indent_case_contents_when_block = true
 csharp_indent_switch_labels = true
 csharp_indent_labels = flush_left
+csharp_indent_block_contents = true
+csharp_indent_braces = false
+csharp_indent_case_contents_when_block = true
 
 # Space preferences
 csharp_space_after_cast = false
-csharp_space_after_colon_in_inheritance_clause = true
-csharp_space_after_comma = true
-csharp_space_after_dot = false
 csharp_space_after_keywords_in_control_flow_statements = true
-csharp_space_after_semicolon_in_for_statement = true
-csharp_space_around_binary_operators = before_and_after
-csharp_space_around_declaration_statements = false
+csharp_space_between_parentheses = false
 csharp_space_before_colon_in_inheritance_clause = true
-csharp_space_before_comma = false
-csharp_space_before_dot = false
-csharp_space_before_open_square_brackets = false
-csharp_space_before_semicolon_in_for_statement = false
-csharp_space_between_empty_square_brackets = false
-csharp_space_between_method_call_empty_parameter_list_parentheses = false
-csharp_space_between_method_call_name_and_opening_parenthesis = false
-csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_after_colon_in_inheritance_clause = true
+csharp_space_around_binary_operators = before_and_after
+csharp_space_between_method_declaration_parameter_list_parentheses = false
 csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
 csharp_space_between_method_declaration_name_and_open_parenthesis = false
-csharp_space_between_method_declaration_parameter_list_parentheses = false
-csharp_space_between_parentheses = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_method_call_empty_parameter_list_parentheses = false
+csharp_space_between_method_call_name_and_opening_parenthesis = false
+csharp_space_after_comma = true
+csharp_space_before_comma = false
+csharp_space_after_dot = false
+csharp_space_before_dot = false
+csharp_space_after_semicolon_in_for_statement = true
+csharp_space_before_semicolon_in_for_statement = false
+csharp_space_around_declaration_statements = false
+csharp_space_before_open_square_brackets = false
+csharp_space_between_empty_square_brackets = false
 csharp_space_between_square_brackets = false
 
 # Use Conditional Expression.
@@ -211,3 +219,14 @@ dotnet_naming_style._camelcase.required_prefix = _
 dotnet_naming_style._camelcase.required_suffix =
 dotnet_naming_style._camelcase.word_separator =
 dotnet_naming_style._camelcase.capitalization = camel_case
+
+# resharper preferences
+#resharper_csharp_keep_user_linebreaks = false
+resharper_csharp_max_attribute_length_for_same_line = 38
+resharper_csharp_keep_existing_attribute_arrangement = false
+resharper_csharp_place_type_attribute_on_same_line = false
+resharper_csharp_place_method_attribute_on_same_line = false
+resharper_csharp_place_accessorholder_attribute_on_same_line = false
+resharper_csharp_place_accessor_attribute_on_same_line = false
+resharper_csharp_place_field_attribute_on_same_line = false
+resharper_csharp_place_record_field_attribute_on_same_line = false

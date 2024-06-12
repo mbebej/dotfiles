@@ -3,3 +3,6 @@
 .DS_Store
 .idea/
 *.DotSettings
+*.crt
+*.key
+*.pfx*
