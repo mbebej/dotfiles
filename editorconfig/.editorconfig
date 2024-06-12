@@ -55,6 +55,11 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
 
+# Lua Files
+[*.lua]
+indent_style = space
+indent_size = 4
+
 # https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/csharp-formatting-options
 # CSharp code style settings:
 [*.cs]
